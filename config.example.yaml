@@ -1,0 +1,26 @@
+# lazyforge 配置示例
+# 核心零依赖，本文件为可选配置，缺省时走内置默认值
+
+# 检索相关
+retrieval:
+  top_k: 5                 # 每次为任务检索出的候选工具数
+  backend: hybrid          # sparse | dense | hybrid
+  hybrid_weight: 0.5       # hybrid 融合时 dense 权重（0~1）
+
+# 嵌入相关（零依赖 TF-IDF + 特征哈希）
+embedding:
+  hash_dim: 2048           # 特征哈希维度
+  ngram_range: [1, 2]      # 词 / 二元组
+  idf_smoothing: 0.5
+
+# 上下文预算
+budget:
+  context_limit: 12000     # 目标上下文 token 上限
+  schema_avg_tokens: 180   # 单个工具完整 schema 的估算 token
+  stub_tokens: 24          # 单个 stub 的估算 token
+  safety_factor: 0.9       # 留 10% 余量
+
+# 工具库（示例；真实项目替换为你的工具目录）
+library:
+  format: json             # json | yaml
+  path: examples/tools.json

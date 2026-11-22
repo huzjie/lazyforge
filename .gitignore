@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.so
+
+# 日志与数据
+data/
+*.log
+
+# 密钥
+.env
+*.token
+
+# 编辑器
+.idea/
+.vscode/
+.DS_Store
